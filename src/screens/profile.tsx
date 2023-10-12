@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 
 const Profile = (): JSX.Element => {
   return (
@@ -8,7 +8,5 @@ const Profile = (): JSX.Element => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default Profile;
