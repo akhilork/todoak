@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import AppLogo from '../assets/svg/app-logo.svg';
-import {Colors} from '../styles';
+import AppLogo from '@app/assets/svg/app-logo.svg';
+import {Colors} from '@app/styles';
 
 const Loading = (): JSX.Element => {
   return (

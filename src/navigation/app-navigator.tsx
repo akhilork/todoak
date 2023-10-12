@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Calendar, Report, Profile} from '../screens';
+import {Home, Calendar, Report, Profile} from '@app/screens';
 
 const Tab = createBottomTabNavigator();
 
