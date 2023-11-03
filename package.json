@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "lint-staged": "lint-staged --config lint-staged.js",
-    "husky-install": "husky install",
+    "prepare": "husky install",
     "prettier": "prettier . -check",
     "start": "react-native start",
     "test": "jest",
