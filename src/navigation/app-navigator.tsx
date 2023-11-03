@@ -1,6 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Calendar, Report, Profile} from '@app/screens';
+import {TabBar} from '@app/components';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +26,7 @@ const appScreens = [
 
 const AppNavigator = (): JSX.Element => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={TabBar}>
       {appScreens.map((screen, index) => (
         <Tab.Screen
           key={index}
