@@ -16,8 +16,24 @@ export interface Task {
   name: string;
   description?: string;
   date?: string;
+  users: User[];
 }
 
 export interface TaskState {
   taskList: Task[];
+}
+
+export interface User {
+  name: string;
+  image: string;
+}
+
+export interface AvatarProps {
+  height: number;
+  width: number;
+  url: string;
+}
+
+export interface AvatarGroupProps {
+  users: User[];
 }

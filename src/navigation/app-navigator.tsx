@@ -52,7 +52,7 @@ const AppNavigator = (): JSX.Element => {
   );
 };
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   shawdow: {
     shadowColor: '#DDDDDD',
     shadowOffset: {
