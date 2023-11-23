@@ -1,15 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
-
-export interface Task {
-  name: string;
-  description?: string;
-  date?: string;
-}
-
-interface TaskState {
-  taskList: Task[];
-}
+import {Task, TaskState} from '@app/types';
 
 // Define the initial state using that type
 const initialState: TaskState = {

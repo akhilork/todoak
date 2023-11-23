@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {ScrollView, Text} from 'react-native';
 
-const Profile = (): JSX.Element => {
+const Profile: FC = () => {
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <Text>Profile</Text>
