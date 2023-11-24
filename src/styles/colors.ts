@@ -3,6 +3,7 @@ const colors = {
   primaryLight: '#7265bd',
   primaryDark: '#4738ae',
   white: 'white',
+  black: 'black',
   gray: 'gray',
   divider: '#877cce',
   transparent: 'transparent',

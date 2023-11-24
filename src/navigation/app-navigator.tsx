@@ -24,21 +24,23 @@ const AppNavigator = (): JSX.Element => {
   return (
     <CurvedBottomBar.Navigator
       type="DOWN"
-      shadowStyle={styles.shawdow}
       height={55}
       circleWidth={50}
       bgColor={Colors.primary}
       initialRouteName="title1"
       borderTopLeftRight
       renderCircle={() => (
-        <Animated.View style={styles.btnCircleUp}>
+        <Animated.View style={styles.buttonCircleUp}>
           <TouchableOpacity
-            style={styles.button}
+            style={styles.addButton}
             onPress={() => Alert.alert('Click Action')}>
             <AddIcon color={Colors.white} width={30} height={30} />
           </TouchableOpacity>
         </Animated.View>
       )}
+      screenOptions={{
+        headerShown: false,
+      }}
       tabBar={TabBar}>
       {appScreens.map((screen, index) => (
         <CurvedBottomBar.Screen
@@ -53,20 +55,11 @@ const AppNavigator = (): JSX.Element => {
 };
 
 const styles = StyleSheet.create({
-  shawdow: {
-    shadowColor: '#DDDDDD',
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 5,
-  },
-  button: {
+  addButton: {
     flex: 1,
     justifyContent: 'center',
   },
-  btnCircleUp: {
+  buttonCircleUp: {
     width: 60,
     height: 60,
     borderRadius: 30,
@@ -74,14 +67,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: Colors.primary,
     bottom: 30,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-    elevation: 1,
   },
 });
 
