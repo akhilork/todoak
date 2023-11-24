@@ -5,7 +5,7 @@ import CalendarIcon from '@app/assets/svg/calendar.svg';
 import HomeIcon from '@app/assets/svg/home.svg';
 
 const NavigationIcon = ({routeName, selectedTab}: TabBarProps): JSX.Element => {
-  const color = routeName === selectedTab ? Colors.white : 'transparent';
+  const color = routeName === selectedTab ? Colors.white : Colors.transparent;
   const props = {width: 30, height: 30, color: color};
   const iconNames: any = {
     Home: <HomeIcon {...props} />,

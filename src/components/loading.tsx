@@ -5,14 +5,14 @@ import {Colors} from '@app/styles';
 
 const Loading = (): JSX.Element => {
   return (
-    <View style={styles.loadingConatiner}>
+    <View style={styles.loadingContainer}>
       <AppLogo height={86} width={260} color={Colors.white} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  loadingConatiner: {
+  loadingContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
