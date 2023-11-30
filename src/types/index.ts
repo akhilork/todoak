@@ -43,3 +43,9 @@ export interface CarouselIndicatorProps {
   indicatorCount: number;
   selectedIndicator: number;
 }
+
+export interface GroupButtonProps {
+  buttonList: string[];
+  selectedButton: string;
+  updateSelectedButton: (selectedButton: string) => void;
+}

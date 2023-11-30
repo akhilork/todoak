@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {ScrollView, Text} from 'react-native';
 
-const Calendar: FC = () => {
+const Calendar = (): JSX.Element => {
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <Text>Calendar</Text>

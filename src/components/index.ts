@@ -5,3 +5,4 @@ export {default as TaskCard} from './taskCard';
 export {default as Avatar} from './avatar';
 export {default as AvatarGroup} from './avatarGroup';
 export {default as CarouselIndicator} from './carouselIndicator';
+export {default as GroupButton} from './groupButton';
