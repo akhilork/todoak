@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   avatarCountContainer: {
     width: 27,
     height: 27,
-    backgroundColor: Colors.blackTransparent70,
+    backgroundColor: Colors.blackVariant.transparent70,
     borderRadius: 50,
   },
   avatarCountText: {
