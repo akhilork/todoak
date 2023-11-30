@@ -1,27 +1,27 @@
 export const UsersList = [
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 1',
+    image: 'https://mui.com/static/images/avatar/1.jpg',
   },
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 2',
+    image: 'https://mui.com/static/images/avatar/2.jpg',
   },
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 3',
+    image: 'https://mui.com/static/images/avatar/3.jpg',
   },
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 4',
+    image: 'https://mui.com/static/images/avatar/1.jpg',
   },
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 5',
+    image: 'https://mui.com/static/images/avatar/2.jpg',
   },
   {
-    name: 'test',
-    image: 'https://reactnative.dev/img/tiny_logo.png',
+    name: 'User 6',
+    image: 'https://mui.com/static/images/avatar/3.jpg',
   },
 ];
 
