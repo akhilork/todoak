@@ -16,6 +16,7 @@ export interface Task {
   name: string;
   description?: string;
   date?: string;
+  percentage?: number;
   users: User[];
 }
 
@@ -36,4 +37,9 @@ export interface AvatarProps {
 
 export interface AvatarGroupProps {
   users: User[];
+}
+
+export interface CarouselIndicatorProps {
+  indicatorCount: number;
+  selectedIndicator: number;
 }

@@ -1,13 +1,21 @@
 const colors = {
   primary: '#6553d5',
-  primaryLight: '#7265bd',
-  primaryDark: '#4738ae',
+  primaryVariant: {
+    100: '#877cce',
+    200: '#7265bd',
+    300: '#4738ae',
+  },
   white: 'white',
   black: 'black',
+  blackVariant: {
+    transparent70: '#000000b3',
+  },
   gray: 'gray',
-  divider: '#877cce',
+  grayvariant: {
+    200: '#525355',
+    300: '#26252c',
+  },
   transparent: 'transparent',
-  blackTransparent70: '#000000b3',
 };
 
 export default colors;

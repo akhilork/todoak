@@ -35,7 +35,7 @@ const TaskCard = ({name, description, date, users}: Task): JSX.Element => {
 
 const styles = StyleSheet.create({
   taskCardContainer: {
-    backgroundColor: Colors.primaryLight,
+    backgroundColor: Colors.primaryVariant[200],
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 18,
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   divider: {
-    borderWidth: 1,
-    borderColor: Colors.divider,
+    borderBottomWidth: 1,
+    borderColor: Colors.primaryVariant[100],
     marginVertical: 10,
   },
   taskCardFooter: {
