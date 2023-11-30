@@ -1,3 +1,5 @@
+export const TaskPriorityList = ['High', 'Medium', 'Low'];
+
 export const UsersList = [
   {
     name: 'User 1',
