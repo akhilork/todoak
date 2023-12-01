@@ -4,6 +4,7 @@ const colors = {
     100: '#877cce',
     200: '#7265bd',
     300: '#4738ae',
+    400: '#3b2f88',
   },
   white: 'white',
   black: 'black',
@@ -16,6 +17,7 @@ const colors = {
     300: '#26252c',
   },
   transparent: 'transparent',
+  danger: '#f26b68',
 };
 
 export default colors;
