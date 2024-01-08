@@ -25,7 +25,7 @@ const GroupButton = ({
             style={[
               styles.groupButton,
               selectedButton === item && {
-                backgroundColor: Colors.primaryVariant[300],
+                backgroundColor: Colors.primaryVariant[400],
               },
             ]}
             onPress={() => updateSelectedButton(item)}>

@@ -6,7 +6,7 @@ export function getTheme() {
   const disabledColor = Colors.gray;
 
   return {
-    calendarBackground: Colors.primaryVariant[400],
+    calendarBackground: Colors.primaryVariant[500],
     // arrows
     arrowColor: Colors.white,
     // knob

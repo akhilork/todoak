@@ -17,6 +17,7 @@ export interface Task {
   description?: string;
   date?: string;
   percentage?: number;
+  status?: string;
   users: User[];
 }
 
@@ -48,4 +49,13 @@ export interface GroupButtonProps {
   buttonList: string[];
   selectedButton: string;
   updateSelectedButton: (selectedButton: string) => void;
+}
+
+export interface ProgressBarProps {
+  percentage: number;
+  height: number;
+  width?: number | null;
+  borderWidth: number;
+  unfilledColor: string;
+  color: string;
 }

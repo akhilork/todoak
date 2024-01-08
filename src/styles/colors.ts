@@ -1,10 +1,12 @@
 const colors = {
   primary: '#6553d5',
   primaryVariant: {
-    100: '#877cce',
-    200: '#7265bd',
-    300: '#4738ae',
-    400: '#3b2f88',
+    50: '#c3c9fe',
+    100: '#7b87f6',
+    200: '#877cce',
+    300: '#7265bd',
+    400: '#4738ae',
+    500: '#3b2f88',
   },
   white: 'white',
   black: 'black',

@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   todaysTaskContainer: {
     padding: 20,
     gap: 10,
-    backgroundColor: Colors.primaryVariant[300],
+    backgroundColor: Colors.primaryVariant[400],
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
     paddingBottom: 70,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   notificationButton: {
-    backgroundColor: Colors.primaryVariant[300],
+    backgroundColor: Colors.primaryVariant[400],
     borderRadius: 10,
     height: 35,
     width: 35,

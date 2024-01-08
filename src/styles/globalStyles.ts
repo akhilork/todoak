@@ -12,6 +12,9 @@ const globalStyles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  flex1: {
+    flex: 1,
+  },
 });
 
 export default globalStyles;
