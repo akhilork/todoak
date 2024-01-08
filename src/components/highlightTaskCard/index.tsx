@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import * as Progress from 'react-native-progress';
 import {Colors, GlobalStyles} from '@app/styles';
 import {Task} from '@app/types';
-import {AvatarGroup} from '@app/components';
+import {AvatarGroup, ProgressBar} from '@app/components';
 import CalendarIcon from '@app/assets/svg/calendar.svg';
 import CardRoundCurve from '@app/assets/svg/card-round-curve.svg';
 import CardBottomCurve from '@app/assets/svg/card-bottom-curve.svg';
@@ -34,18 +33,13 @@ const HighlightTaskCard = ({
       <Text style={styles.taskCardDescription} numberOfLines={2}>
         {description}
       </Text>
-      <View style={styles.progressBarContainer}>
-        <Progress.Bar
-          style={styles.progressBar}
-          progress={percentage / 100}
-          borderWidth={0}
-          unfilledColor={Colors.grayvariant[200]}
-          color={Colors.white}
-          width={null}
-          height={5}
-        />
-        <Text style={styles.progressPercentage}>{percentage}%</Text>
-      </View>
+      <ProgressBar
+        percentage={percentage}
+        borderWidth={0}
+        unfilledColor={Colors.grayvariant[200]}
+        color={Colors.white}
+        height={5}
+      />
       <View style={styles.divider} />
       <View style={styles.taskCardFooter}>
         <View style={styles.dateContainer}>
@@ -77,6 +71,7 @@ const styles = StyleSheet.create({
   taskCardDescription: {
     color: Colors.white,
     fontSize: 14,
+    marginBottom: 10,
   },
   divider: {
     borderBottomWidth: 1,
@@ -99,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   menuIcon: {
-    backgroundColor: Colors.primaryVariant[300],
+    backgroundColor: Colors.primaryVariant[400],
     borderRadius: 50,
     padding: 7,
     zIndex: 3,
@@ -119,20 +114,6 @@ const styles = StyleSheet.create({
     left: 0,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  progressBarContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-    marginTop: 10,
-  },
-  progressBar: {
-    flex: 1,
-  },
-  progressPercentage: {
-    color: Colors.white,
-    fontWeight: 'bold',
   },
 });
 

@@ -6,3 +6,6 @@ export {default as Avatar} from './avatar';
 export {default as AvatarGroup} from './avatarGroup';
 export {default as CarouselIndicator} from './carouselIndicator';
 export {default as GroupButton} from './groupButton';
+export {default as Calendar} from './calendar';
+export {default as CalendarTaskCard} from './calendarTaskCard';
+export {default as ProgressBar} from './progressBar';
