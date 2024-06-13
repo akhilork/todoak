@@ -1,5 +1,20 @@
 export const TaskPriorityList = ['High', 'Medium', 'Low'];
 
+export const TaskMenuItem = [
+  {
+    label: 'Mark as complete',
+    icon: 'checkcircleo',
+  },
+  {
+    label: 'Edit',
+    icon: 'edit',
+  },
+  {
+    label: 'Delete',
+    icon: 'delete',
+  },
+];
+
 export const UsersList = [
   {
     name: 'User 1',

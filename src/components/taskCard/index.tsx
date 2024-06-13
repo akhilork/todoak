@@ -1,12 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, GlobalStyles} from '@app/styles';
 import {Task} from '@app/types';
 import {AvatarGroup} from '@app/components';
 import CalendarIcon from '@app/assets/svg/calendar.svg';
 
-const TaskCard = ({name, description, date, users}: Task): JSX.Element => {
+const TaskCard = ({
+  name,
+  description,
+  date,
+  users,
+  openMenu,
+}: Task): JSX.Element => {
   return (
     <View style={styles.taskCardContainer}>
       <View
@@ -14,7 +20,9 @@ const TaskCard = ({name, description, date, users}: Task): JSX.Element => {
         <Text style={styles.taskCardName} numberOfLines={1}>
           {name}
         </Text>
-        <Ionicons name="ellipsis-vertical" size={20} color={Colors.white} />
+        <TouchableOpacity onPress={openMenu}>
+          <Ionicons name="ellipsis-vertical" size={20} color={Colors.white} />
+        </TouchableOpacity>
       </View>
       <Text style={styles.taskCardDescription} numberOfLines={2}>
         {description}

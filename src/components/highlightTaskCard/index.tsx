@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, GlobalStyles} from '@app/styles';
 import {Task} from '@app/types';
@@ -14,6 +14,7 @@ const HighlightTaskCard = ({
   date,
   users,
   percentage = 0,
+  openMenu,
 }: Task): JSX.Element => {
   return (
     <View style={styles.taskCardContainer}>
@@ -21,9 +22,9 @@ const HighlightTaskCard = ({
       <View style={styles.cardBottomCurve}>
         <CardBottomCurve width={150} height={15} />
       </View>
-      <View style={styles.menuIcon}>
+      <TouchableOpacity onPress={openMenu} style={styles.menuIcon}>
         <Ionicons name="ellipsis-horizontal" size={20} color={Colors.white} />
-      </View>
+      </TouchableOpacity>
       <View
         style={[GlobalStyles.row, GlobalStyles.justifySpacebetweenAlignCenter]}>
         <Text style={styles.taskCardName} numberOfLines={1}>

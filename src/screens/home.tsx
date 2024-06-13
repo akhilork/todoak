@@ -14,8 +14,10 @@ import {
   HighlightTaskCard,
   CarouselIndicator,
   GroupButton,
+  BottomSheet,
+  MenuItem,
 } from '@app/components';
-import {TasksList, TaskPriorityList} from '@app/utils';
+import {TasksList, TaskPriorityList, TaskMenuItem} from '@app/utils';
 import {Colors, GlobalStyles} from '@app/styles';
 import BellIcon from '@app/assets/svg/bell.svg';
 
@@ -23,6 +25,7 @@ const Home = (): JSX.Element => {
   const carouselWidth = Dimensions.get('window').width - 40; // 40 is padding given on highlightTaskCardContainer
   const [selectedCarouselIndex, setSelectedCarouselIndex] = useState<number>(0);
   const [selectedPriority, setSelectedPriority] = useState<string>('High');
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   return (
     <ScrollView
@@ -71,6 +74,7 @@ const Home = (): JSX.Element => {
                 date={item.date}
                 users={item.users}
                 percentage={item.percentage}
+                openMenu={() => setOpenMenu(true)}
               />
             )}
           />
@@ -91,7 +95,9 @@ const Home = (): JSX.Element => {
             styles.todaysTaskHeadingContainer,
           ]}>
           <Text style={styles.todaysTaskHeading}>Today's Task</Text>
-          <Text style={styles.seeAllText}>See All</Text>
+          <TouchableOpacity>
+            <Text style={styles.seeAllText}>See All</Text>
+          </TouchableOpacity>
         </View>
         {TasksList.map((task, index) => (
           <TaskCard
@@ -100,9 +106,23 @@ const Home = (): JSX.Element => {
             description={task.description}
             date={task.date}
             users={task.users}
+            openMenu={() => setOpenMenu(true)}
           />
         ))}
       </View>
+      {/* Menu */}
+      <BottomSheet
+        visible={openMenu}
+        snapPointValues={['30%', '30%']}
+        onDismiss={() => setOpenMenu(false)}>
+        <View style={styles.menuItemOuterContainer}>
+          {TaskMenuItem.map((item, index) => (
+            <TouchableOpacity key={index} onPress={() => setOpenMenu(false)}>
+              <MenuItem label={item.label} icon={item.icon} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </BottomSheet>
     </ScrollView>
   );
 };
@@ -173,6 +193,10 @@ const styles = StyleSheet.create({
   },
   profileInfoContainer: {
     flexDirection: 'row',
+    gap: 10,
+  },
+  menuItemOuterContainer: {
+    padding: 10,
     gap: 10,
   },
 });

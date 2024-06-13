@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors, GlobalStyles} from '@app/styles';
 import {Task} from '@app/types';
@@ -12,6 +12,7 @@ const CalendarTaskCard = ({
   status,
   users,
   percentage = 0,
+  openMenu,
 }: Task): JSX.Element => {
   return (
     <LinearGradient
@@ -41,7 +42,9 @@ const CalendarTaskCard = ({
           </Text>
           <AvatarGroup users={users} />
         </View>
-        <Ionicons name="ellipsis-vertical" size={20} color={Colors.white} />
+        <TouchableOpacity onPress={openMenu}>
+          <Ionicons name="ellipsis-vertical" size={20} color={Colors.white} />
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   );

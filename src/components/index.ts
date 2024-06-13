@@ -9,3 +9,5 @@ export {default as GroupButton} from './groupButton';
 export {default as Calendar} from './calendar';
 export {default as CalendarTaskCard} from './calendarTaskCard';
 export {default as ProgressBar} from './progressBar';
+export {default as BottomSheet} from './bottomSheet';
+export {default as MenuItem} from './menuItem';

@@ -19,6 +19,7 @@ export interface Task {
   percentage?: number;
   status?: string;
   users: User[];
+  openMenu?: () => void;
 }
 
 export interface TaskState {
@@ -28,6 +29,18 @@ export interface TaskState {
 export interface User {
   name: string;
   image: string;
+}
+
+export interface BottomSheetProps {
+  visible: boolean;
+  snapPointValues: string[];
+  onDismiss: () => void;
+  children: React.ReactNode;
+}
+
+export interface MenuItemProps {
+  label: string;
+  icon: string;
 }
 
 export interface AvatarProps {

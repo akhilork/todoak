@@ -11,6 +11,7 @@ const colors = {
   white: 'white',
   black: 'black',
   blackVariant: {
+    transparent30: '#0000004d',
     transparent70: '#000000b3',
   },
   gray: 'gray',
