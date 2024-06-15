@@ -1,10 +1,24 @@
-import React from 'react';
-import {StyleSheet, ScrollView, View, Text, Platform} from 'react-native';
-import {Calendar as CustomCalendar, CalendarTaskCard} from '@app/components';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
+import {
+  Calendar as CustomCalendar,
+  CalendarTaskCard,
+  BottomSheet,
+  MenuItem,
+} from '@app/components';
 import {Colors, GlobalStyles} from '@app/styles';
-import {TasksList} from '@app/utils';
+import {TasksList, TaskMenuItem} from '@app/utils';
 
 const Calendar = (): JSX.Element => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+
   return (
     <ScrollView stickyHeaderIndices={[0]} style={styles.calendarOuterContainer}>
       <CustomCalendar />
@@ -24,6 +38,7 @@ const Calendar = (): JSX.Element => {
                 users={task.users}
                 status={task.status}
                 percentage={task.percentage}
+                openMenu={() => setOpenMenu(true)}
               />
               <View
                 style={[styles.calendarTimeDivider, styles.horizontalDivider]}
@@ -32,6 +47,19 @@ const Calendar = (): JSX.Element => {
           </View>
         ))}
       </View>
+      {/* Menu */}
+      <BottomSheet
+        visible={openMenu}
+        snapPointValues={['30%', '30%']}
+        onDismiss={() => setOpenMenu(false)}>
+        <View style={styles.menuItemOuterContainer}>
+          {TaskMenuItem.map((item, index) => (
+            <TouchableOpacity key={index} onPress={() => setOpenMenu(false)}>
+              <MenuItem label={item.label} icon={item.icon} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </BottomSheet>
     </ScrollView>
   );
 };
@@ -72,6 +100,10 @@ const styles = StyleSheet.create({
   horizontalDivider: {
     marginLeft: 15,
     marginTop: 20,
+  },
+  menuItemOuterContainer: {
+    padding: 10,
+    gap: 10,
   },
 });
 

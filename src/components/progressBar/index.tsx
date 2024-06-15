@@ -9,6 +9,7 @@ const ProgressBar = ({
   borderWidth = 0,
   unfilledColor,
   color,
+  progressPercentageColor = Colors.white,
   width = null,
   height,
 }: ProgressBarProps) => {
@@ -23,7 +24,10 @@ const ProgressBar = ({
         width={width}
         height={height}
       />
-      <Text style={styles.progressPercentage}>{percentage}%</Text>
+      <Text
+        style={[styles.progressPercentage, {color: progressPercentageColor}]}>
+        {percentage}%
+      </Text>
     </View>
   );
 };
@@ -39,7 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   progressPercentage: {
-    color: Colors.white,
     fontWeight: 'bold',
   },
 });

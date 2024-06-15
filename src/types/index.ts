@@ -19,15 +19,30 @@ export interface Task {
   percentage?: number;
   status?: string;
   users: User[];
+  openMenu?: () => void;
 }
 
 export interface TaskState {
   taskList: Task[];
+  openTaskModel: boolean;
 }
 
 export interface User {
   name: string;
   image: string;
+}
+
+export interface BottomSheetProps {
+  visible: boolean;
+  snapPointValues: Array<number | string>;
+  sheetModalBackground?: string;
+  onDismiss: () => void;
+  children: React.ReactNode;
+}
+
+export interface MenuItemProps {
+  label: string;
+  icon: string;
 }
 
 export interface AvatarProps {
@@ -58,4 +73,23 @@ export interface ProgressBarProps {
   borderWidth: number;
   unfilledColor: string;
   color: string;
+  progressPercentageColor?: string;
+}
+
+export interface SelectItem {
+  title: string;
+  color?: string;
+  textColor?: string;
+}
+
+export interface SelectDropdownProps {
+  data: Array<SelectItem>;
+  placeholder: string;
+  defaultValue?: SelectItem;
+}
+
+export interface SubTaskCardProps {
+  title: string;
+  description: string;
+  isCompleted: boolean;
 }

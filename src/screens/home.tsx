@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {
   Dimensions,
-  ScrollView,
   Text,
   View,
   StyleSheet,
   Image,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {
@@ -14,20 +14,32 @@ import {
   HighlightTaskCard,
   CarouselIndicator,
   GroupButton,
+  BottomSheet,
+  MenuItem,
 } from '@app/components';
-import {TasksList, TaskPriorityList} from '@app/utils';
+import {TasksList, TaskPriorityList, TaskMenuItem} from '@app/utils';
 import {Colors, GlobalStyles} from '@app/styles';
 import BellIcon from '@app/assets/svg/bell.svg';
+import {useDispatch} from 'react-redux';
+import {setOpenTaskModel} from '@app/store/task';
 
 const Home = (): JSX.Element => {
   const carouselWidth = Dimensions.get('window').width - 40; // 40 is padding given on highlightTaskCardContainer
   const [selectedCarouselIndex, setSelectedCarouselIndex] = useState<number>(0);
   const [selectedPriority, setSelectedPriority] = useState<string>('High');
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const dispatch = useDispatch();
+
+  const onMenuItemPress = (item: string) => {
+    console.log('item', item);
+    if (item === 'edit') {
+      dispatch(setOpenTaskModel(true));
+    }
+    setOpenMenu(false);
+  };
 
   return (
-    <ScrollView
-      style={styles.homeOuterContainer}
-      contentInsetAdjustmentBehavior="automatic">
+    <View style={styles.homeOuterContainer}>
       {/* Header */}
       <View style={styles.homeHeaderContainer}>
         <View style={styles.profileInfoContainer}>
@@ -71,6 +83,7 @@ const Home = (): JSX.Element => {
                 date={item.date}
                 users={item.users}
                 percentage={item.percentage}
+                openMenu={() => setOpenMenu(true)}
               />
             )}
           />
@@ -83,7 +96,7 @@ const Home = (): JSX.Element => {
         </View>
       </View>
       {/* Todays Task */}
-      <View style={styles.todaysTaskContainer}>
+      <View style={[styles.todaysTaskContainer, GlobalStyles.flex1]}>
         <View
           style={[
             GlobalStyles.row,
@@ -91,36 +104,60 @@ const Home = (): JSX.Element => {
             styles.todaysTaskHeadingContainer,
           ]}>
           <Text style={styles.todaysTaskHeading}>Today's Task</Text>
-          <Text style={styles.seeAllText}>See All</Text>
+          <TouchableOpacity>
+            <Text style={styles.seeAllText}>See All</Text>
+          </TouchableOpacity>
         </View>
-        {TasksList.map((task, index) => (
-          <TaskCard
-            key={index}
-            name={task.name}
-            description={task.description}
-            date={task.date}
-            users={task.users}
-          />
-        ))}
+        <FlatList
+          style={GlobalStyles.flex1}
+          contentContainerStyle={styles.tasksListContainer}
+          data={TasksList}
+          renderItem={({item}) => (
+            <TaskCard
+              name={item.name}
+              description={item.description}
+              date={item.date}
+              users={item.users}
+              openMenu={() => setOpenMenu(true)}
+            />
+          )}
+          keyExtractor={item => item.id}
+        />
       </View>
-    </ScrollView>
+      {/* Menu */}
+      <BottomSheet
+        visible={openMenu}
+        snapPointValues={['30%', '30%']}
+        onDismiss={() => setOpenMenu(false)}>
+        <View style={styles.menuItemOuterContainer}>
+          {TaskMenuItem.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => onMenuItemPress(item.value)}>
+              <MenuItem label={item.label} icon={item.icon} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </BottomSheet>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   homeOuterContainer: {
     backgroundColor: Colors.black,
+    flex: 1,
   },
   todaysTaskContainer: {
-    padding: 20,
     gap: 10,
     backgroundColor: Colors.primaryVariant[400],
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
-    paddingBottom: 70,
   },
   todaysTaskHeadingContainer: {
     marginBottom: 10,
+    padding: 20,
+    paddingBottom: 0,
   },
   todaysTaskHeading: {
     color: Colors.white,
@@ -174,6 +211,15 @@ const styles = StyleSheet.create({
   profileInfoContainer: {
     flexDirection: 'row',
     gap: 10,
+  },
+  menuItemOuterContainer: {
+    padding: 10,
+    gap: 10,
+  },
+  tasksListContainer: {
+    gap: 12,
+    paddingBottom: 65,
+    paddingHorizontal: 20,
   },
 });
 

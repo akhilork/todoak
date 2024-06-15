@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   carouselIndicator: {
-    backgroundColor: Colors.grayvariant[300],
+    backgroundColor: Colors.grayVariant[300],
     width: 15,
     height: 5,
     borderRadius: 50,

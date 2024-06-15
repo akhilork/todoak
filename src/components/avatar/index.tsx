@@ -18,7 +18,6 @@ const Avatar = ({width, height, url}: AvatarProps): JSX.Element => {
 
 const styles = StyleSheet.create({
   avatarContainer: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.white,
