@@ -26,7 +26,7 @@ const CalendarTaskCard = ({
         <ProgressBar
           percentage={percentage}
           borderWidth={0}
-          unfilledColor={Colors.grayvariant[200]}
+          unfilledColor={Colors.grayVariant[200]}
           color={Colors.primaryVariant[300]}
           height={7}
         />

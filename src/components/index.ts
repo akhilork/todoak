@@ -11,3 +11,5 @@ export {default as CalendarTaskCard} from './calendarTaskCard';
 export {default as ProgressBar} from './progressBar';
 export {default as BottomSheet} from './bottomSheet';
 export {default as MenuItem} from './menuItem';
+export {default as SelectDropdown} from './selectDropdown';
+export {default as SubTaskCard} from './subTaskCard';

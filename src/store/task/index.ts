@@ -5,6 +5,7 @@ import {Task, TaskState} from '@app/types';
 // Define the initial state using that type
 const initialState: TaskState = {
   taskList: [],
+  openTaskModel: false,
 };
 
 export const authSlice = createSlice({
@@ -14,9 +15,12 @@ export const authSlice = createSlice({
     setTaskList: (state, action: PayloadAction<Task[]>) => {
       state.taskList = action.payload;
     },
+    setOpenTaskModel: (state, action: PayloadAction<boolean>) => {
+      state.openTaskModel = action.payload;
+    },
   },
 });
 
-export const {setTaskList} = authSlice.actions;
+export const {setTaskList, setOpenTaskModel} = authSlice.actions;
 
 export default authSlice.reducer;

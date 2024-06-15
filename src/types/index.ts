@@ -24,6 +24,7 @@ export interface Task {
 
 export interface TaskState {
   taskList: Task[];
+  openTaskModel: boolean;
 }
 
 export interface User {
@@ -33,7 +34,8 @@ export interface User {
 
 export interface BottomSheetProps {
   visible: boolean;
-  snapPointValues: string[];
+  snapPointValues: Array<number | string>;
+  sheetModalBackground?: string;
   onDismiss: () => void;
   children: React.ReactNode;
 }
@@ -71,4 +73,23 @@ export interface ProgressBarProps {
   borderWidth: number;
   unfilledColor: string;
   color: string;
+  progressPercentageColor?: string;
+}
+
+export interface SelectItem {
+  title: string;
+  color?: string;
+  textColor?: string;
+}
+
+export interface SelectDropdownProps {
+  data: Array<SelectItem>;
+  placeholder: string;
+  defaultValue?: SelectItem;
+}
+
+export interface SubTaskCardProps {
+  title: string;
+  description: string;
+  isCompleted: boolean;
 }

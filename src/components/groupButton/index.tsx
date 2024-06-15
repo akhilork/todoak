@@ -42,7 +42,7 @@ const GroupButton = ({
 
 const styles = StyleSheet.create({
   groupButtonContainer: {
-    backgroundColor: Colors.grayvariant[300],
+    backgroundColor: Colors.grayVariant[300],
     padding: 5,
     borderRadius: 10,
     flexDirection: 'row',

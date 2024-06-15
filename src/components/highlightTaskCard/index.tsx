@@ -37,7 +37,7 @@ const HighlightTaskCard = ({
       <ProgressBar
         percentage={percentage}
         borderWidth={0}
-        unfilledColor={Colors.grayvariant[200]}
+        unfilledColor={Colors.grayVariant[200]}
         color={Colors.white}
         height={5}
       />
@@ -57,7 +57,7 @@ const HighlightTaskCard = ({
 
 const styles = StyleSheet.create({
   taskCardContainer: {
-    backgroundColor: Colors.grayvariant[300],
+    backgroundColor: Colors.grayVariant[300],
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 18,

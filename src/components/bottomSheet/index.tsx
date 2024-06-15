@@ -15,6 +15,7 @@ const BottomSheet = ({
   visible,
   onDismiss,
   snapPointValues,
+  sheetModalBackground = Colors.grayVariant[300],
   children,
 }: BottomSheetProps): JSX.Element => {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
@@ -48,7 +49,10 @@ const BottomSheet = ({
               ref={bottomSheetModalRef}
               index={1}
               snapPoints={snapPoints}
-              backgroundStyle={styles.bottomSheetModal}
+              backgroundStyle={[
+                styles.bottomSheetModal,
+                {backgroundColor: sheetModalBackground},
+              ]}
               handleIndicatorStyle={styles.handleIndicatorStyle}
               onChange={handleSheetChanges}>
               <TouchableWithoutFeedback>
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.blackVariant.transparent30,
   },
   bottomSheetModal: {
-    backgroundColor: Colors.grayvariant[300],
+    borderRadius: 40,
   },
   handleIndicatorStyle: {
     backgroundColor: Colors.white,

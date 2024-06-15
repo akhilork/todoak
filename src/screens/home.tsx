@@ -20,12 +20,23 @@ import {
 import {TasksList, TaskPriorityList, TaskMenuItem} from '@app/utils';
 import {Colors, GlobalStyles} from '@app/styles';
 import BellIcon from '@app/assets/svg/bell.svg';
+import {useDispatch} from 'react-redux';
+import {setOpenTaskModel} from '@app/store/task';
 
 const Home = (): JSX.Element => {
   const carouselWidth = Dimensions.get('window').width - 40; // 40 is padding given on highlightTaskCardContainer
   const [selectedCarouselIndex, setSelectedCarouselIndex] = useState<number>(0);
   const [selectedPriority, setSelectedPriority] = useState<string>('High');
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const dispatch = useDispatch();
+
+  const onMenuItemPress = (item: string) => {
+    console.log('item', item);
+    if (item === 'edit') {
+      dispatch(setOpenTaskModel(true));
+    }
+    setOpenMenu(false);
+  };
 
   return (
     <ScrollView
@@ -117,7 +128,9 @@ const Home = (): JSX.Element => {
         onDismiss={() => setOpenMenu(false)}>
         <View style={styles.menuItemOuterContainer}>
           {TaskMenuItem.map((item, index) => (
-            <TouchableOpacity key={index} onPress={() => setOpenMenu(false)}>
+            <TouchableOpacity
+              key={index}
+              onPress={() => onMenuItemPress(item.value)}>
               <MenuItem label={item.label} icon={item.icon} />
             </TouchableOpacity>
           ))}

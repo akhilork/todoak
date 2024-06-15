@@ -1,15 +1,32 @@
+import {Colors} from '@app/styles';
+
 export const TaskPriorityList = ['High', 'Medium', 'Low'];
+
+export const PriorityList = [
+  {title: 'High', color: Colors.danger, textColor: Colors.white},
+  {title: 'Medium', color: Colors.warning, textColor: Colors.white},
+  {title: 'Low', color: Colors.success, textColor: Colors.white},
+];
+
+export const StatusList = [
+  {title: 'TODO', color: Colors.info, textColor: Colors.white},
+  {title: 'Running', color: Colors.warning, textColor: Colors.white},
+  {title: 'Complete', color: Colors.success, textColor: Colors.white},
+];
 
 export const TaskMenuItem = [
   {
+    value: 'markAscomplete',
     label: 'Mark as complete',
     icon: 'checkcircleo',
   },
   {
+    value: 'edit',
     label: 'Edit',
     icon: 'edit',
   },
   {
+    value: 'delete',
     label: 'Delete',
     icon: 'delete',
   },
@@ -84,3 +101,34 @@ export const TasksList = [
     users: UsersList,
   },
 ];
+
+export const DummyCreateTasksDetails = {
+  name: 'Design Surplus Shot',
+  description:
+    'Design a surplus shot related to task management or printing and typeset...',
+  date: '4 July',
+  percentage: 33,
+  status: 'Running',
+  priority: 'High',
+  user: {
+    name: 'Akhil',
+    image: 'https://mui.com/static/images/avatar/1.jpg',
+  },
+  subTasks: [
+    {
+      name: 'Task 1',
+      description: 'Desian a e-commerce website',
+      isCompleted: true,
+    },
+    {
+      name: 'Task 2',
+      description: 'Design a landing page for food delivery.',
+      isCompleted: true,
+    },
+    {
+      name: 'Task 3',
+      description: 'Design a mobile app for vendor.',
+      isCompleted: false,
+    },
+  ],
+};
