@@ -61,6 +61,7 @@ export const UsersList = [
 
 export const TasksList = [
   {
+    id: '1',
     name: 'Design Surplus Shot',
     description: 'Design a surplus shot related to task management',
     date: '4 July',
@@ -71,6 +72,7 @@ export const TasksList = [
     users: UsersList,
   },
   {
+    id: '2',
     name: 'Design UI Design Update',
     description: 'Design a Surplus UI design related to task management',
     date: '4 July',
@@ -81,6 +83,7 @@ export const TasksList = [
     users: UsersList,
   },
   {
+    id: '3',
     name: 'Design Surplus Shot',
     description: 'Design a surplus shot related to task management',
     date: '4 July',
@@ -91,6 +94,7 @@ export const TasksList = [
     users: UsersList,
   },
   {
+    id: '4',
     name: 'Design UI Design Update',
     description: 'Design a Surplus UI design related to task management',
     date: '4 July',

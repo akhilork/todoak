@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {
   Dimensions,
-  ScrollView,
   Text,
   View,
   StyleSheet,
   Image,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {
@@ -39,9 +39,7 @@ const Home = (): JSX.Element => {
   };
 
   return (
-    <ScrollView
-      style={styles.homeOuterContainer}
-      contentInsetAdjustmentBehavior="automatic">
+    <View style={styles.homeOuterContainer}>
       {/* Header */}
       <View style={styles.homeHeaderContainer}>
         <View style={styles.profileInfoContainer}>
@@ -98,7 +96,7 @@ const Home = (): JSX.Element => {
         </View>
       </View>
       {/* Todays Task */}
-      <View style={styles.todaysTaskContainer}>
+      <View style={[styles.todaysTaskContainer, GlobalStyles.flex1]}>
         <View
           style={[
             GlobalStyles.row,
@@ -110,16 +108,21 @@ const Home = (): JSX.Element => {
             <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
-        {TasksList.map((task, index) => (
-          <TaskCard
-            key={index}
-            name={task.name}
-            description={task.description}
-            date={task.date}
-            users={task.users}
-            openMenu={() => setOpenMenu(true)}
-          />
-        ))}
+        <FlatList
+          style={GlobalStyles.flex1}
+          contentContainerStyle={styles.tasksListContainer}
+          data={TasksList}
+          renderItem={({item}) => (
+            <TaskCard
+              name={item.name}
+              description={item.description}
+              date={item.date}
+              users={item.users}
+              openMenu={() => setOpenMenu(true)}
+            />
+          )}
+          keyExtractor={item => item.id}
+        />
       </View>
       {/* Menu */}
       <BottomSheet
@@ -136,24 +139,25 @@ const Home = (): JSX.Element => {
           ))}
         </View>
       </BottomSheet>
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   homeOuterContainer: {
     backgroundColor: Colors.black,
+    flex: 1,
   },
   todaysTaskContainer: {
-    padding: 20,
     gap: 10,
     backgroundColor: Colors.primaryVariant[400],
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
-    paddingBottom: 70,
   },
   todaysTaskHeadingContainer: {
     marginBottom: 10,
+    padding: 20,
+    paddingBottom: 0,
   },
   todaysTaskHeading: {
     color: Colors.white,
@@ -211,6 +215,11 @@ const styles = StyleSheet.create({
   menuItemOuterContainer: {
     padding: 10,
     gap: 10,
+  },
+  tasksListContainer: {
+    gap: 12,
+    paddingBottom: 65,
+    paddingHorizontal: 20,
   },
 });
 
