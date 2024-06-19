@@ -1,6 +1,7 @@
 # Todo App - React Native Project
 
 Welcome to the Todo App project! This README provides all the necessary information to get started with developing and using the app.
+![screens-design](https://github.com/akhilork/todoak/assets/51960205/d15e536a-894f-4d68-a6d7-1b8fac7482fa)
 
 ## Table of Contents
 
