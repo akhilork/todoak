@@ -9,7 +9,7 @@ export const PriorityList = [
 ];
 
 export const StatusList = [
-  {title: 'TODO', color: Colors.info, textColor: Colors.white},
+  {title: 'To Do', color: Colors.info, textColor: Colors.white},
   {title: 'Running', color: Colors.warning, textColor: Colors.white},
   {title: 'Complete', color: Colors.success, textColor: Colors.white},
 ];
@@ -90,7 +90,7 @@ export const TasksList = [
     startTime: '04 pm',
     endTime: '05 pm',
     percentage: 84,
-    status: 'Todo',
+    status: 'To Do',
     users: UsersList,
   },
   {

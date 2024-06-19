@@ -39,7 +39,7 @@ const CreateOrEditTask = (): JSX.Element => {
         <View style={[GlobalStyles.row, styles.createdUserDetails]}>
           <Avatar height={25} width={25} url={UsersList[1].image} />
           <Text style={styles.createdUserInfo}>
-            Created by {DummyCreateTasksDetails.user.name}{' '}
+            Created by {DummyCreateTasksDetails.user.name} on{' '}
             {DummyCreateTasksDetails.date}
           </Text>
         </View>
@@ -66,7 +66,9 @@ const CreateOrEditTask = (): JSX.Element => {
       />
       <View>
         <Text style={styles.heading}>Description:</Text>
-        <Text>{DummyCreateTasksDetails.description}</Text>
+        <Text style={{color: Colors.grayVariant[200]}}>
+          {DummyCreateTasksDetails.description}
+        </Text>
       </View>
       <View style={GlobalStyles.flex1}>
         <Text style={[styles.heading, styles.subTaskHeading]}>Sub Tasks</Text>
@@ -90,7 +92,7 @@ const CreateOrEditTask = (): JSX.Element => {
 
 const styles = StyleSheet.create({
   createOrEditTaskContainer: {
-    padding: 14,
+    padding: 18,
     paddingTop: 0,
     gap: 18,
     flex: 1,
