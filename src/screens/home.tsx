@@ -22,6 +22,7 @@ import {Colors, GlobalStyles} from '@app/styles';
 import BellIcon from '@app/assets/svg/bell.svg';
 import {useDispatch} from 'react-redux';
 import {setOpenTaskModel} from '@app/store/task';
+import {navigate} from '@app/navigation/navigation-service';
 
 const Home = (): JSX.Element => {
   const carouselWidth = Dimensions.get('window').width - 40; // 40 is padding given on highlightTaskCardContainer
@@ -104,7 +105,7 @@ const Home = (): JSX.Element => {
             styles.todaysTaskHeadingContainer,
           ]}>
           <Text style={styles.todaysTaskHeading}>Today's Task</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate('Calendar')}>
             <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
