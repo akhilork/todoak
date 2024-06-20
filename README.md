@@ -13,6 +13,7 @@ Welcome to the Todo App project! This README provides all the necessary informat
 5. [Running the App](#running-the-app)
 6. [Project Structure](#project-structure)
 7. [Usage](#usage)
+8. [Roadmap](#roadmap)
 
 ## Introduction
 
@@ -117,6 +118,17 @@ todoak/
 - **Marking as Complete:** Tap on the checkbox next to a task to mark it as complete.
 - **Editing a Task:** Tap on the "ellipsis icon" to edit its details.
 - **Deleting a Task:** ap on the "ellipsis icon" to delete.
+
+## Roadmap
+
+Here are the planned features and improvements for future releases:
+
+- [ ] Design add new task dialog.
+- [ ] Implement edit and delete functionality.
+- [ ] Design notifications screen and implement push notifications to remind users of upcoming tasks.
+- [ ] Enable sharing and collaborative editing of tasks with other users.
+- [ ] Build a backend API using Node and MongoDB to power the app for multiple users.
+- [ ] Add user authentication to provide a personalized experience.
 
 ---
 
